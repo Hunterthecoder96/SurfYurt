@@ -1,0 +1,32 @@
+.boardForm-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+  }
+  .boardForm-container > p {
+    margin-bottom: 0;
+  }
+  
+  .profile-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .section-left,
+  .section-right {
+    margin-right: 10px;
+  }
+  .section {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  @media (max-width: 850px) {
+    .profile-container {
+      flex-direction: column; /* Stack profile sections vertically */
+    }
+    .section {
+      margin-bottom: 10px; /* Add some space between stacked sections */
+    }
+  }

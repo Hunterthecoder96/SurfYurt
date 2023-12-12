@@ -1,0 +1,17 @@
+
+.public-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .div{
+    padding:25px;
+  }
+  .Rating{
+    align-items: end;
+    justify-content: end;
+  }

@@ -1,0 +1,13 @@
+.star-rating {
+    font-size: 24px;
+  }
+  
+  .star {
+    cursor: pointer;
+    color: #ccc;
+    margin: 0 3px;
+  }
+  
+  .selected {
+    color: gold;
+  }
