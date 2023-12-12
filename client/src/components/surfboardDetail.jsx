@@ -26,7 +26,7 @@ export default function SurfboardDetails() {
   const filterComments = comments.filter(
     (comment) => foundSurfboard._id === id
   );
-
+//testing something
   return (
     <div className="detailed-container">
       <h1 className="detail-shaper">{foundSurfboard.shaper}</h1>
