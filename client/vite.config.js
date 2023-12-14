@@ -16,12 +16,12 @@ export default defineConfig({
         secure: false,
       },
       '/public': {
-        target: 'http://localhost:6903',
+        target: 'http://localhost:6900',
         changeOrigin: true,
         secure: false,
       },
       '/comment': {
-        target: 'http://localhost:6903',
+        target: 'http://localhost:6900',
         changeOrigin: true,
         secure: false,
       },

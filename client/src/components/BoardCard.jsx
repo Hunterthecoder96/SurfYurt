@@ -18,7 +18,7 @@ export default function BoardCard(props, { cardData }) {
         <img className="card-img" src={image} />
       </Link>
 
-      <Rating className="Rating" initialValue={rating} />
+      <Rating className="Rating" value={rating.score} />
     </div>
   );
 }

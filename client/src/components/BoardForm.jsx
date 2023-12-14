@@ -7,7 +7,7 @@ const initInputs = {
   model: '',
   size: '',
   image: '',
-  rating: [{ score: 0 }],
+  rating: { score: 0 },
   description: '',
 };
 
@@ -15,12 +15,12 @@ export default function BoardForm(props) {
   const [inputs, setInputs] = useState(initInputs);
 
   const { addBoard } = useContext(UserContext);
+  console.log(inputs)
 
-  function handleRating(e) {
-    const { value } = e.target;
+  function handleRating(value) {
     setInputs((prevInputs) => ({
       ...prevInputs,
-      rating: [{ score: value }],
+      rating: { score: value },
     }));
   }
 

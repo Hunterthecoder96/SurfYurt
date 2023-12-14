@@ -1,20 +1,22 @@
 import React, { useState, useContext } from 'react';
 import "../Styles/Rating.css"
-const Rating = () => {
-  const [rating, setRating] = useState();
+const Rating = (props) => {
+  const {onChange, value} =props;
+ 
 
   const handleStarClick = (value) => {
-    setRating(value);
+    if(onChange){
+      onChange(value);
+    }
   };
 
   return (
     <div className="star-rating">
-      {[1, 2, 3, 4, 5].map((value) => (
+      {[1, 2, 3, 4, 5].map((number) => (
         <span
-          key={value}
-          className={`star ${value <= rating ? 'selected' : ''}`}
-          onClick={() => handleStarClick(value)}
-        >
+          key={number}
+          className={`star ${number <= value ? 'selected' : ''}`}
+          onClick={()=>handleStarClick(number)}>
           &#9733;
         </span>
       ))}

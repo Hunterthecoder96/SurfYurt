@@ -16,18 +16,19 @@ const surfboardSchema = new Schema({
   image: {
     type: Object,
   },
-  rating: [
-    {
-      username: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-      },
-      score: {
+  rating:{
+    score: {
         type: Number,
         default: 0,
       },
     },
-  ],
+    //   username: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'User',
+    //   },
+      
+    
+  
 
   description: {
     type: String,
