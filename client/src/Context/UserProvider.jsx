@@ -122,7 +122,7 @@ export default function UserProvider(props) {
 
   function getAllSurfboards() {
     userAxios
-      .get('/api/public')
+      .get('/public')
       .then((res) => {
         setPublicSurfboards(res.data);
       })

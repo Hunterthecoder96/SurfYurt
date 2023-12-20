@@ -3,7 +3,9 @@ const publicRouter = express.Router();
 const Surfboard = require('../models/surfboard');
 
 publicRouter.get('/', (req, res, next) => {
-  Surfboard.find((err, surfboards) => {
+  Surfboard.find()
+  .populate('user', '-password')
+    .exec((err, surfboards) => {
     if (err) {
       res.status(500);
       return next(err);

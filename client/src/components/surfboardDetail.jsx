@@ -30,12 +30,14 @@ export default function SurfboardDetails() {
   return (
     <div className="detailed-container">
       <h1 className="detail-shaper">{foundSurfboard.shaper}</h1>
-      <h2 className="detail-model">{foundSurfboard.model}</h2>
-      <h3 className="detail-size">{foundSurfboard.size}</h3>
-      <h4 className="detail-rating">{foundSurfboard.rating.score}</h4>
+      <h2 className="detail-model">MODEL:{foundSurfboard.model}</h2>
+      <h3 className="detail-size">SIZE:{foundSurfboard.size}</h3>
+      <h4 className="detail-rating">STARS:{foundSurfboard.rating.score}</h4>
       <img className="detail-image" src={foundSurfboard.image} />
       <h4 className="detail-description">{foundSurfboard.description}</h4>
+     <p>posted by: {foundSurfboard.user.username}</p>
       <CommentSection
+        
         comments={filterComments}
         onAddComment={addComment}
         surfboardId={id}

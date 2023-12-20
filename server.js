@@ -25,17 +25,17 @@ app.use(
 );
 app.use('/api/surfboard', require('./routes/surfboardRouter'));
 
-app.use('/api/public', require('./routes/publicRouter'));
+app.use('/public', require('./routes/publicRouter'));
 app.use('/api/comment', require('./routes/commentRouter'));
 
 app.listen(process.env.PORT, () => {
   console.log('server is running on local host 69');
 });
 
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'client/dist/index.html'), function (err) {
-    if (err) {
-      res.status(500).send(err);
-    }
-  });
-});
+// app.get('/*', function (req, res) {
+//   res.sendFile(path.join(__dirname, 'client/dist/index.html'), function (err) {
+//     if (err) {
+//       res.status(500).send(err);
+//     }
+//   });
+// });

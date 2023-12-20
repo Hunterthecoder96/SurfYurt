@@ -4,13 +4,15 @@ const Comment = require('../models/comment');
 const { expressjwt } = require('express-jwt');
 
 commentRouter.get('/', (req, res, next) => {
-  Comment.find((err, comments) => {
-    if (err) {
-      res.status(500);
-      return next(err);
-    }
-    return res.status(200).send(comments);
-  });
+  Comment.find()
+    .populate('user',"-password") // Populate the user details
+    .exec((err, comments) => {
+      if (err) {
+        res.status(500).json({ error: 'Internal Server Error' });
+        return next(err);
+      }
+      res.status(200).json(comments);
+    });
 });
 
 commentRouter.post(

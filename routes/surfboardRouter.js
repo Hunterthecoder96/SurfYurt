@@ -2,9 +2,13 @@ const express = require('express');
 const surfboardRouter = express.Router();
 const Surfboard = require('../models/surfboard');
 const surfboard = require('../models/surfboard');
+const Comment = require('../models/comment')
+const User = require('../models/user')
 
 surfboardRouter.get('/', (req, res, next) => {
-  Surfboard.find((err, surfboards) => {
+  Surfboard.find()
+  .populate('user', '-password')
+    .exec((err, surfboards) => {
     if (err) {
       res.status(500);
       return next(err);
@@ -12,6 +16,26 @@ surfboardRouter.get('/', (req, res, next) => {
     return res.status(200).send(surfboards);
   });
 });
+
+
+//FOR NOTES
+// surfboardRouter.get('/surfboardWcomments', async (req, res, next) => {
+//   try {
+//     const surfboards = await Surfboard.find()
+
+//     const allData = await Promise.all(surfboards.map(async board => {
+//       const comments = await Comment.find({surfboardId: board._id}).populate('user', '-password')
+//       const user = await User.findById(board.user)
+//       return {...board.toObject(), comments, user: user.withoutPassword()}
+//     }))
+
+//     return res.status(201).send(allData)
+
+//   } catch (err) {
+//     res.status(500)
+//     return next(err)
+//   }
+// })
 
 surfboardRouter.get('/user', (req, res, next) => {
   Surfboard.find({ user: req.auth._id }, (err, surfboards) => {
