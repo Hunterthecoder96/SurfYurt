@@ -144,6 +144,17 @@ export default function UserProvider(props) {
       .catch((err) => console.log(err.response.data.errMsg));
   }
 
+  const deleteBoard = async (boardId) => {
+    try {
+      await userAxios.delete(`/api/surfboard/${boardId}`);
+      setUserState((prevState) => ({
+        ...prevState,
+        boards: prevState.boards.filter(board => board._id !== boardId),
+      }));
+    } catch (err) {
+      console.log(err.response.data.errMsg);
+    }
+  };
   return (
     <UserContext.Provider
       value={{
@@ -163,6 +174,7 @@ export default function UserProvider(props) {
         addComment,
         newComment,
         handleChange,
+        deleteBoard,
       }}
     >
       {props.children}

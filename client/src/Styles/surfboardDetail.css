@@ -1,86 +1,89 @@
 .detailed-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    margin-top: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background: #fff;
-  }
-  
-  .detail-shaper {
-    font-size: 28px;
-    margin-bottom: 10px;
-  }
-  
-  .detail-model {
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
-  
-  .detail-size {
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
-  
-  .detail-rating {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  
-  .detail-description {
-    font-size: 16px;
-    line-height: 1.4;
-  }
-  
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
 
-  /*comment*/
+.detail-shaper {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: 600;
+}
 
-  .comment-section {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f5f5f5;
-  }
-  
-  .textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: vertical; /* Allows vertical resizing of the textarea */
-  }
-  
-  button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-    margin-top: 20px;
-  }
-  
-  .comment {
-    background-color: #fff;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .comment-map {
-    max-height: 300px; /* Set a maximum height for the comment container, and add overflow: auto; to enable scrolling if there are too many comments */
-    overflow: auto;
-  }
+.detail-model, .detail-size, .detail-rating {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.detail-description {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.detail-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.comment-section {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+  font-size: 1em;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 30px;
+  color: #333;
+}
+
+.comment {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.comment-map {
+  max-height: 400px;
+  overflow: auto;
+}

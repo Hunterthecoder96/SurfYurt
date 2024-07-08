@@ -1,49 +1,58 @@
-
 .quiver {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .card-wrap {
-    border: black solid 2px;
-   
-    height: 250px;
-    width: 150px;
-    margin: 10px;
-    text-decoration: none;
-    background-color: white; /* Add a background color */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  }
-  .card-img {
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-    margin: 0 auto; /* Center the image */
-  }
-  .card-shaper {
-   
-    margin-top: 5px;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-decoration: none;  /* Make it bold */
-  }
-  .card-link{
-    text-decoration: none;
-    font-size: 1 em;
-    font-weight: bold; 
-    text-align: center;
-  }
-  .card-model {
-    font-size: 1em; /* Adjust font size */
-    margin-bottom: 5px;
-    text-decoration: none;
-    /* Add spacing between elements */
-  }
-  
-  .card-wrap:hover {
-    border-color: #333; /* Change border color on hover */
-    transform: scale(1.05); /* Increase size slightly on hover */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  }
-  
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-wrap {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  height: 300px;
+  width: 200px;
+  margin: 15px;
+  text-decoration: none;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-shaper {
+  margin: 10px 0;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-model {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.card-size {
+  font-size: 1em;
+  color: #999;
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.card-wrap:hover {
+  border-color: #007BFF;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}

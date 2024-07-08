@@ -11,6 +11,7 @@ const initInputs = {
   description: '',
 };
 
+
 export default function BoardForm(props) {
   const [inputs, setInputs] = useState(initInputs);
 
@@ -24,13 +25,24 @@ export default function BoardForm(props) {
     }));
   }
 
+
+
   function handleChange(e) {
-    const { name, value } = e.target;
-    setInputs((prevInputs) => ({
-      ...prevInputs,
-      [name]: value,
-    }));
+    const { name, value, type, image} = e.target;
+    if (type === 'file') {
+      setInputs((prevInputs) => ({
+        ...prevInputs,
+        [name]: image,
+      }));
+    } else {
+      setInputs((prevInputs) => ({
+        ...prevInputs,
+        [name]: value,
+      }));
+    }
   }
+
+
   function handleSubmit(e) {
     e.preventDefault();
     addBoard(inputs);
@@ -92,6 +104,20 @@ export default function BoardForm(props) {
       <option value="6'10">6'10"</option>
       <option value="6'11">6'11"</option>
       <option value="7'0">7'0"</option>
+      <option value="7'1">7'1"</option>
+      <option value="7'2">7'2"</option>
+      <option value="7'3">7'3"</option>
+      <option value="7'4">7'4"</option>
+      <option value="7'5">7'5"</option>
+      <option value="7'6">7'6"</option>
+      <option value="7'7">7'7"</option>
+      <option value="7'8">7'8"</option>
+      <option value="7'9">7'9"</option>
+      <option value="7'10">7'10"</option>
+      <option value="7'11">7'11"</option>
+      <option value="8'0">8'0"</option>
+      <option value="8'1">8'1"</option>
+      <option value="8'2">8'2"</option>
       
 
       </select>

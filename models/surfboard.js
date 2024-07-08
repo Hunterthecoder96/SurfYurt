@@ -14,7 +14,7 @@ const surfboardSchema = new Schema({
     type: String,
   },
   image: {
-    type: Object,
+    type: String,
   },
   rating:{
     score: {
