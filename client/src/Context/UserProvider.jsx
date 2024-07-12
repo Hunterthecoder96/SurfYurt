@@ -152,9 +152,14 @@ export default function UserProvider(props) {
         boards: prevState.boards.filter(board => board._id !== boardId),
       }));
     } catch (err) {
-      console.log(err.response.data.errMsg);
+      if (err.response && err.response.data) {
+        console.log(err.response.data.errMsg);
+      } else {
+        console.log("An error occurred while deleting the board.");
+      }
     }
   };
+  
   return (
     <UserContext.Provider
       value={{

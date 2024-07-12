@@ -2,18 +2,20 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 20px; /* Added for consistent spacing between cards */
 }
 
 .card-wrap {
   border: 1px solid #ddd;
   border-radius: 8px;
-  height: 300px;
-  width: 200px;
+  height: 350px;
+  width: 250px;
   margin: 15px;
   text-decoration: none;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* Added for positioning delete button */
 }
 
 .card-img {
@@ -55,4 +57,30 @@
   border-color: #007BFF;
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.delete-btn {
+  position: absolute; /* Absolute positioning for delete button */
+  top: 10px;
+  right: 10px;
+  background-color: #ff4d4d; /* Red background for delete button */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: x-small;
+  
+}
+.delete-btn>span{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.delete-btn:hover {
+  background-color: #ff0000; /* Darker red on hover */
 }

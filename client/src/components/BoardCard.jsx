@@ -1,30 +1,24 @@
-import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import Rating from './Rating';
 import { UserContext } from '../Context/UserProvider';
-import SurfboardDetail from './surfboardDetail';
-import "../Styles/boardCard.css"
-import { useContext } from 'react';
-export default function BoardCard(props, { cardData }) {
-  const { model, shaper, size, image, _id, rating } = props;
-  // const handleRatingChange = (newRating) => {
-  //   const response
-  // };
+import "../Styles/boardCard.css";
 
-  const { deleteBoard } = useContext(UserContext)
+export default function BoardCard({ model, shaper, size, image, _id, rating }) {
+  const { deleteBoard } = useContext(UserContext);
 
   return (
     <div className="card-wrap">
-      {/* <button onClick={() => deleteBoard(surfboard._id)}>delete</button> */}
+      <button className="delete-btn" onClick={() => deleteBoard(_id)}><span>Delete</span></button>
       <Link className='card-link' to={`/surfboard/${_id}`}>
-
-        <h1 className="card-shaper">{shaper}</h1> 
-        <h2 className="card-model">{model}</h2>
-        <h3 className="card-size">{size}</h3>
-        <img className="card-img" src={image} />
+        <img className="card-img" src={image} alt={`${model} by ${shaper}`} />
+        <div className="card-content">
+          <h1 className="card-shaper">{shaper}</h1>
+          <h2 className="card-model">{model}</h2>
+          <h3 className="card-size">{size}</h3>
+          <Rating className="Rating" value={rating.score} />
+        </div>
       </Link>
-
-      <Rating className="Rating" value={rating.score} />
     </div>
   );
 }
